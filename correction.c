@@ -168,16 +168,6 @@ unsigned int decryptage (unsigned int nombreACrypte, unsigned int puissance, uns
     else return ((nombreACrypte * decryptage(nombreACrypte,puissance-1,modulo))%modulo);
 }
 
-// Fonction de cryptage dÃ©cryptage des blocs de 2 charactÃ¨res de faÃ§on RSA
-int cryptographie2(unsigned long int nombreACrypte, int puissance, int modulo)
-{
-    int multiplicateur = nombreACrypte%modulo;
-    for (int i = 2; i <= puissance; i++) {
-        nombreACrypte = nombreACrypte * multiplicateur;
-        nombreACrypte = nombreACrypte%modulo;
-    }
-    return nombreACrypte;
-}
 
 // RÃ¨gle tous les termes cryptÃ©s sur le mÃªme nombres de digits
 void creationFinaleMessageCrypte( int *tabCrypte, int longueur )
